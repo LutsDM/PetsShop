@@ -1,116 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
     <style>
-        
-    form {
-        width: 50%; /* Ширина формы */
-        max-width: 500px; /* Максимальная ширина формы */
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 0 auto; /* Центрирование по горизонтали */
-    }
-
+      h1{
+        text-align: center;
+      }
+    
     </style>
-</head>
-<body>
-    
-    <div style="position: relative; height: 100px;">
-        <a href="https://foni.papik.pro/uploads/posts/2024-09/foni-papik-pro-3c68-p-kartinki-zhdun-na-prozrachnom-fone-1.png" 
-             style="text-decoration: none; position: absolute; top: 10px; right: 90px;">
-                 <button>Sign In</button>
-    </a>
-    
-        
-    <a href="https://foni.papik.pro/uploads/posts/2024-09/foni-papik-pro-3c68-p-kartinki-zhdun-na-prozrachnom-fone-1.png" 
-       style="text-decoration: none; position: absolute; top: 10px; right: 10px;">
-        <button>Sign Up</button>
-    </a>
-    </div>
-    
-    <a href = "https://memi.klev.club/uploads/posts/2024-04/thumbs/memi-klev-club-3yde-p-memi-negr-stuchit-po-visku-24.jpg">
-        <img src='https://i.postimg.cc/Vs76XgVF/cropped-Petsshop-logo-300x101.png' alt='logo' style="position: absolute; top: 0 ;">
-       
-    </a>
+    -->
+    <link rel = "stylesheet" href = "./style.css">
 
-    <hr>
+    <title>Document</title>
+  </head>
+  <!-- 
+  где будет задаваться стилистика?
+  1. Inline-styles (в тойже строке, где и сам элемент)
+  2. Отдельный тег style в хед
+  3. Отдельный фаил (.css)
 
-    <div>
-
-    <h1 style="text-align: center;">  <strong> Welcome to the Pet's Shop <em>!!!</em></strong></h1>
-    
-    </div>
-    
-    <div>    
-    <h2 style="text-align: center;">
-        <strong><mark>You can place your order</mark></strong>
-    </h2>
-    </div>
-    
-    <br>
+  с помощью чего будет выбираться элементы для настройки? 
+  1. С помощью имени тега
+  -->
+  
+  <body>
+    <h1 style="text-align: center;">Sign Up</h1>
     <form>
-
-        <div><!--Выбор типа животных-->
-        <h3 style="text-align: center;">               <strong> Your Order:</strong></h3>
-        <label for = "type">Select Animal Type </label>
-        <select id = "type" required>
-                <option value=""></option>
-                <option value="Cats">Fanny Cats</option>
-                <option value="Dogs">Bad Dogs</option>
-                <option value="Fish">Gold Fish</option>
-        </select>
-        </div>
-
-        <br>
-        <div><!--количество-->
-        <label for = "Quantity">Number of Animals</label> 
-        <input id="Quantity" type="number" placeholder="0" min="1" max="15" required/><!-- max 15-->
-        </select>
-        </div>
-        
-               
-        <br>
-        <div><!--время-->
-            <label for = "Data">When you need a pet?</label> 
-            <input id="Data" type="date" required/>
-            </select>
-            </div>
-        </div>
-
-        <br>
-        <div><!--из приюта-->
-            <label for = "Shelter">From Shelter </label> 
-            <input id="Shelter" type="checkbox" />
-            </select>
-            </div>
-        </div>
-
-        <br>
-        <div><!--email-->
-            <label for = "email">Leave your email</label> 
-            <input id="email" type="email" />
-            </select>
-            </div>
-        </div>
-
+        <!-- Дефолтный блочный элемент - div-->
+        <!-- Дефолтный строчный элемент - span-->
+        <div>   
+            <label for="name">Name: </label>
+            <input id="name" type="text" placeholder="Enter your name" required />
+        </div> 
 
         <br/>
 
-        <div style="position: relative; height: 50px; border: 1px ;">
-            <a href="https://avatars.dzeninfra.ru/get-zen_doc/2815454/pub_5ed7f8c0a039be1d18f7099c_5ed8003952494f14d4073218/scale_2400"></a>
-            <button style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
-                Order
-            </button>
-            </a>
-        </div>
-    </form>
+        <div>   
+            <label for="email">Email: </label>
+            <input id="email" type="email" placeholder="Enter your email" required />
+        </div> 
 
-    
-</body>
+        <br/>
+
+        <div>   
+            <label for="password">Password: </label>
+            <input id="password" type="password" placeholder="Enter your email" maxlength="16" minlength="8" required />
+        </div> 
+
+        <br/>
+
+        <div>   
+            <label for="phone">Phone: *</label>
+            <input 
+            title="Обрати внимание на формат"
+            id="phone" 
+            type="tel" 
+            placeholder="123-467-7890"  
+            pattern = "\+[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required />
+        </div> 
+        
+        <br/>
+        
+        <div>   
+            <label for="hobby">Hobby: </label>
+            <select id="hobby"  required>
+                <option value = ""> Choose your </option>
+                <option value = "chess">Chess - best sport </option>
+                <option value = "Football">Football - best sport </option>
+                <option value = "no">No in this list! </option>
+            </select>
+        </div> 
+
+        <br/>
+
+        <div>   
+          <label for="agree">I agree ... </label>
+          <input id="agree" type="checkbox" required />
+        </div> 
+
+        <br/>
+
+        <div>   
+          <label for="How many">How many... </label>
+          <input id="How many" type="range" min="0" max="100" value="50" id="slider"/>
+        </div> 
+
+        <br/>
+
+        <div>
+          <label for = "mail">Male</label>
+          <input id = "male" type = "radio" name="gender"  value = "male" required />
+
+
+          <label for = "mail">Female</label>
+          <input id = "female"  type = "radio" name="gender" value = "male"  />
+        </div>
+
+        <br/>
+
+        <button type = "reset">Reset!</button>
+        <button type = "submit">Finish!</button>
+      </form>
+  </body>
 </html>
